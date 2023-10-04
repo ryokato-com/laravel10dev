@@ -9,7 +9,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./docker/php/src:/src
+      - ./docker/php/www:/var/www
 
   app:
     container_name: "app"
@@ -18,7 +18,7 @@ services:
     depends_on:
       - mysql
     volumes:
-      - ./docker/php/src:/src
+      - ./docker/php/www:/var/www
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
 
   mysql:
